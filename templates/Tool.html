@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+
+{% block title %}predLyP{% endblock %}
+
+
+{% block content %}
+<h1 style="color: rgb(139, 61, 91);"><b>predLyP</b></h1> <br>
+<h1 style="color: darkslateblue;"><b>Prediction of cleavage sites by Lysosomal proteases</b></h1> <br>
+
+    
+    <form action="/Tool" method="post">
+
+    <p><b>Enter a protein sequence or Uniprot ID below:</b></p>
+    <textarea name="sequence" cols="80" rows="10"> </textarea>  <br><br>
+    <hr>
+
+    <p><b>Indicate minimum length for fragments</b></p>
+    <div class="input">
+    <input type="text" name="length"> residues (Optional)</div> <br><br>
+    <hr>
+    <h3><b>Please, select:</b></h3>
+
+
+    <input type="radio" name="radio_options" id="All" class="click" value="All" checked> Select all <br>
+    <input type="radio" name="radio_options" id="Selection" class="reset" value="Selection"> Make a selection <br>
+
+    <h5><b>Select one or more enzyme(s):</b></h5>
+<div class="newspaper">
+    <input type="checkbox" name="enzymes" id="SPPL2A" class="event" value="SPPL2A" checked> Signal peptide peptidase-like 2A <br>
+    <input type="checkbox" name="enzymes" id="SPPL2B" class="event" value="SPPL2B" checked> Signal peptide peptidase-like 2B <br>
+    <input type="checkbox" name="enzymes" id="BACE1" class="event" value="BACE1" checked> Beta-secretase 1 <br>
+    <input type="checkbox" name="enzymes" id="CTSD" class="event" value="CTSD" checked> Cathepsin D <br>
+    <input type="checkbox" name="enzymes" id="CTSV" class="event" value="CTSV" checked> Cathepsin V <br>
+    <input type="checkbox" name="enzymes" id="CTSL" class="event" value="CTSL" checked> Cathepsin L<br>
+    <input type="checkbox" name="enzymes" id="CTSK" class="event" value="CTSK" checked> Cathepsin K <br>
+    <input type="checkbox" name="enzymes" id="CTSC" class="event" value="CTSC" checked> Cathepsin C <br>
+    <input type="checkbox" name="enzymes" id="CTSS" class="event" value="CTSS" checked> Cathepsin S <br>
+    <input type="checkbox" name="enzymes" id="CTSH" class="event" value="CTSH" checked> Cathepsin H <br>
+    <input type="checkbox" name="enzymes" id="CTSF" class="event" value="CTSF" checked> Cathepsin F <br>
+    <input type="checkbox" name="enzymes" id="CTSB" class="event" value="CTSB" checked> Cathepsin B <br>
+    <input type="checkbox" name="enzymes" id="LGMN" class="event" value="LGMN" checked> Legumain <br>
+    <input type="checkbox" name="enzymes" id="DPP7" class="event" value="DPP7" checked> Dipeptidyl peptidase 2 <br>
+    <input type="checkbox" name="enzymes" id="CPQ" class="event" value="CPQ" checked> Carboxypeptidase Q <br>
+    <input type="checkbox" name="enzymes" id="PRCP" class="event" value="PRCP" checked> Lysosomal Pro-X carboxypeptidase <br>
+    <input type="checkbox" name="enzymes" id="TPP1" class="event" value="TPP1" checked> Tripeptidyl-peptidase 1 <br>
+    <input type="checkbox" name="enzymes" id="CTSO" class="event" value="CTSO" checked> Cathepsin O <br><br>
+    </div>
+    <br><hr>
+    <left><input type="submit" id="search" value="SUBMIT" style="height:40px; width:80px; font-size:1vw"> <input type="reset" id="reset" value="RESET" style="height:40px; width:80px;font-size:1vw"></left> <br><br>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+
+{% block title %}predLyP-SeqCut{% endblock %}
+
+
+{% block content %}
+<h1 style="color: rgb(139, 61, 91);"><b>predLyP</b></h1> <br>
+<h1 style="color: darkslateblue;"><b>Prediction of cleavage sites by sequential implementation of Lysosomal proteases</b></h1> <br>
+
+
+<div class="center">
+    <form action="/Sequentialcutter" method="post">
+    <p><b>Enter a protein sequence or Uniprot ID below:</b></p>
+    <textarea name="sequence" cols="80" rows="10"> </textarea>  <br><br>
+    <hr>
+    
+    <p><b>Indicate minimum length for fragments</b></p>
+    <div class="input">
+    <input type="text" name="length"> residues (Optional) </div> <br>
+    <hr>
+    <p><b>Mention the name of the proteases in a particular sequential pattern of cutting</b></p>
+
+    <div class="newspaper">
+        <p>1. <input type="text" name="enzymes"> </p>
+        <p>2. <input type="text" name="enzymes"> </p>
+        <p>3. <input type="text" name="enzymes"> </p>
+        <p>4. <input type="text" name="enzymes"> </p>
+        <p>5. <input type="text" name="enzymes"> </p>
+        <p>6. <input type="text" name="enzymes"> </p>
+        <p>7. <input type="text" name="enzymes"> </p>
+        <p>8. <input type="text" name="enzymes"> </p>
+        <p>9. <input type="text" name="enzymes"> </p>
+        <p>10. <input type="text" name="enzymes"> </p>
+        <p>11. <input type="text" name="enzymes"> </p>
+        <p>12. <input type="text" name="enzymes"> </p>
+        <p>13. <input type="text" name="enzymes"> </p>
+        <p>14. <input type="text" name="enzymes"> </p>
+        <p>15. <input type="text" name="enzymes"> </p>
+        <p>16. <input type="text" name="enzymes"> </p>
+        <p>17. <input type="text" name="enzymes"> </p>
+        <p>18. <input type="text" name="enzymes"> </p>
+
+        <p><b>List of proteases used as input: </b></p>
+        <p>Signal peptide peptidase-like 2A "SPPL2A"</p>
+        <p>Signal peptide peptidase-like 2B "SPPL2B"</p>
+        <p>Cathepsin D "CTSD"</p>
+        <p>Cathepsin V "CTSV"</p>
+        <p>Cathepsin L "CTSL"</p>
+        <p>Cathepsin K "CTSK"</p>
+        <p>Legumain "LGMN"</p>
+        <p>Cathepsin O "CTSO"</p>
+        <p>Cathepsin S "CTSS"</p>
+        <p>Cathepsin F "CTSF"</p>
+        <p>Dipeptidyl peptidase 2 "DPP7"</p>
+        <p>Beta-secretase 1 "BACE1"</p>
+        <p>Cathepsin C "CTSC"</p>
+        <p>Cathepsin H "CTSH"</p>
+        <p>Cathepsin B "CTSB"</p>
+        <p>Carboxypeptidase Q "CPQ"</p>
+        <p>Lysosomal Pro-X carboxypeptidase "PRCP"</p>
+        <p>Tripeptidyl-peptidase 1 "TPP1"</p>
+        
+    </div>
+    <hr>
+    <left><input type="submit" id="search" value="SUBMIT" style="height:40px; width:80px; font-size:1vw"> <input type="reset" id="reset" value="RESET" style="height:40px; width:80px;font-size:1vw"></left> <br><br>
+    <hr>
+
+
+</div>
+</form>
+{% endblock %}

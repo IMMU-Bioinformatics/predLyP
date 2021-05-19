@@ -1,0 +1,116 @@
+/* static/style.css 
+TO CHECK > IN FIREFOX&EDGE CRLT+SHIFT+R*/
+
+.center {
+    margin: auto;
+    width: 85%;
+    padding: 10px;
+  }
+
+body{
+    margin:0;
+    font-family:'Work Sans',sans-serif;
+    font-weight: 400;
+}
+
+.container{
+    width:80%;
+    margin:0 auto;
+}
+
+header::after{
+    content:'';
+    display: table;
+    clear: both;
+}
+
+.logo{
+    float: left;
+    padding: 10px 0;
+    width: 10px;
+    height: 5px;
+}
+
+nav{
+    float: right;
+}
+
+nav ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 23px;
+}
+
+nav a{
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+nav a:hover{
+    color: #000;
+}
+
+img{
+    max-width: 80%;
+}
+
+.tab { 
+    margin-left: 1rem; 
+}
+
+form {
+    width:100%;
+    height:100px;
+    margin:auto;
+    position:relative;
+}
+
+.input {
+    width:2,5%;
+    height: 35px;
+}
+
+.newspaper {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+}
+
+.wrap {
+    word-wrap: break-word;
+}
+
+/* Style buttons */
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /* Darker background on mouse-over */
+.btn:hover {
+    background-color: RoyalBlue;
+  }
+
+span {
+    color: red;
+    font-size: 25px;
+  }
+
+.tab-folder > .tab-content:target ~ .tab-content:last-child, .tab-folder > .tab-content {
+    display: none;
+}
+.tab-folder > :last-child, .tab-folder > .tab-content:target {
+    display: block;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+
+{% block title %}OutputSimpleCutter{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1 style="color: rgb(139, 61, 91);"><b>predLyP</b></h1> <br>
+    <h1 style="color: darkslateblue;"><b>Output</b></h1> <br>
+
+    <h3>Results: </h3>
+    <hr>
+
+    <p><div class=".wrap"> 
+        {% for peptidase,cut in sequence_zip if not sequence_zip.hidden %}
+            <b>{{ peptidase }}</b>
+            <br><br>
+            {% if cut|length > 1 %}
+                {% for protease in cut %}
+                    {{ protease|e }} <b><span> || </span> </b>
+                {% endfor %}
+            {% endif %}
+            <br><br>
+        {% endfor %}
+    </div></p>
+
+    <p>
+        <h5>There are <b><u>no</u></b> cutting sites found for the following proteases: <br>
+        {% for peptidase in not_cutlist %}
+            {{peptidase}},
+        {% endfor %}
+    </h5>
+    </p>
+
+    <br><br>
+    <hr>
+    <p>Click on All proteases to see the full table</p>
+    <ul id="menu">
+        <li><a href="#tab1">All proteases</a></li>
+    <!--    <li><a href="#tab2">CTSB</a></li> -->
+    </ul>
+
+    <div class="tab-folder">
+        <div id="tab1" class="tab-content">            
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+        </div>
+
+        <div id="tab2" class="tab-content">        
+        </div>
+
+    </div>
+
+    <hr> 
+    <p>To download the result table, click the 'Download' button below.</p>
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Auto width -->
+    <a href="Table.html" download> <button class="btn"><i class="fa fa-download"></i> Download</button> </a>
+<hr>
+
+{% endblock %}
